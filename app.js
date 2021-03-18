@@ -8,6 +8,7 @@ const c = canvas.getContext('2d');
 var anmt = true;
 var score = 0;
 var nxtLvl = 0;
+var highscore = 0;
 
 //create player box
 var playerObject = [];
@@ -48,9 +49,19 @@ window.addEventListener('keydown', function(event) {
   if (key == 40) {
     down = true
   }
-  if (key == 32){
-    console.log(key)
-    location. reload()
+  if (anmt == false && key == 32){
+    highScore()
+    evilObject = [];
+    playerObject = [];
+    evil = 1;
+    score = 0;
+    nxtLvl = 0;
+    $('#score').html(score)
+    anmt = true;
+    animate()
+    createPlayer()
+    init()
+
   }
 })
 
@@ -70,6 +81,14 @@ window.addEventListener('keyup', function(event) {
     down = false
   }
 })
+function highScore(){
+  if(score > highscore){
+    highscore = score
+    $('#savedScore').html(highscore)
+
+  }
+
+}
 
 
 // create coin and coin interation with player
@@ -184,6 +203,7 @@ function Evil(x, y, dx, dy, mx, my) {
     if (this.x + 6 > playerObject[0].mx && this.x - 6 < playerObject[0].mx + 10.5 &&
       this.y + 6 > playerObject[0].my && this.y - 6 < playerObject[0].my + 10.5) {
       anmt = false;
+      highScore()
 
 
     }
@@ -243,6 +263,10 @@ function animate() {
 
       coin()
     }
+  }
+  else{
+    cancelAnimationFrame(animate)
+    console.log('hj')
   }
 }
 
