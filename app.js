@@ -212,7 +212,7 @@ function createPlayer(){
 function init() {
   
 
-  for (var i = 0; i < evil; i++) {
+  for (var i = evilObject.length; i < evil; i++) {
     var x = Math.floor(Math.random() * (canvas.width - 5 * 2) + 5)
     var y = Math.floor(Math.random() * (canvas.width - 5 * 2) + 5)
     var dx = (Math.random() - .5) * 4
