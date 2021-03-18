@@ -210,7 +210,7 @@ function createPlayer(){
 }
 
 function init() {
-  
+
 
   for (var i = evilObject.length; i < evil; i++) {
     var x = Math.floor(Math.random() * (canvas.width - 5 * 2) + 5)
@@ -224,6 +224,7 @@ function init() {
       }
 
     evilObject.push(new Evil(x, y, dx, dy));
+    // console.log(evilObject.length)
   }
 }
 
