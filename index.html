@@ -11,15 +11,19 @@
     <link rel="stylesheet" href="styles.css">
 
   </head>
+
   <body>
     <div class="score row">
-      <h1 id="score">0</h1>
-
+      <div class="col scoreCount">
+        <h1 id="score">0</h1>
+      </div>
+      <div class="col scoreboard">
+        <h4 id="scoreHeading">Highscore</h4>
+        <h5 id="savedScore"></h5>
+      </div>
     </div>
+        <canvas id="canvas"></canvas>
 
-
-
-    <canvas id="canvas"></canvas>
 <div class="container">
   <div class="row col-4-lg">
     <p>Press the Spacebar to start a new game.</p>
