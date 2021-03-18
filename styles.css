@@ -4,13 +4,19 @@ body{
 }
 canvas{
   position: absolute;
-        top: 55%;
+        top: 56%;
         left: 50%;
         transform: translate(-50%, -50%);
   border: 1px solid;
 }
 .score{
     position: absolute;
-    top: 20%;
-    left: 50%;
+    top: 19.3%;
+    left: 42.7%;
+}
+.scoreCount{
+  margin-right: 100px;
+}
+.scoreHeading{
+  margin-bottom: 4px;
 }
