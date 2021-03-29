@@ -5,6 +5,7 @@ canvas.height = 350
 
 const c = canvas.getContext('2d');
 
+
 var anmt = true;
 var score = 0;
 var nxtLvl = 0;
@@ -31,14 +32,17 @@ var left = false
 var right = false
 var up = false
 var down = false
+var track = false;
 
 //detect player movement from arrow keys
 window.addEventListener('keydown', function(event) {
+
   key = event.keyCode;
 
 
   if (key == 39) {
     right = true
+
   }
   if (key == 37) {
     left = true
@@ -63,6 +67,18 @@ window.addEventListener('keydown', function(event) {
     init()
 
   }
+  if (track == false){
+    track = true;
+
+    audio = new Audio('audio/music.mp3');
+    audio.volume = .5;
+    audio.currentTime = 0;
+    audio.playbackRate = 1;
+    audio.loop = true;
+    audio.play();
+
+  }
+
 })
 
 window.addEventListener('keyup', function(event) {
@@ -266,9 +282,10 @@ function animate() {
   }
   else{
     cancelAnimationFrame(animate)
-    console.log('hj')
+
   }
 }
+
 
 createPlayer()
 animate()
